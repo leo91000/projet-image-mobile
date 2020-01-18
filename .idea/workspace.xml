@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0950f5b-a8ee-4e20-8386-552c9f6e186e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/image_distance_classifier.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/image_features_extraction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image_mobile/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/image_mobile/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -174,7 +167,7 @@
       <updated>1577126875782</updated>
       <workItem from="1577126891354" duration="1860000" />
       <workItem from="1579346628220" duration="5900000" />
-      <workItem from="1579358575799" duration="14847000" />
+      <workItem from="1579358575799" duration="18142000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1577128123979</created>
@@ -190,7 +183,21 @@
       <option name="project" value="LOCAL" />
       <updated>1579351410501</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="API terminated">
+      <created>1579373653287</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1579373653288</updated>
+    </task>
+    <task id="LOCAL-00004" summary="added requirements">
+      <created>1579373827702</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1579373827702</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +220,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Init" />
     <MESSAGE value="Post File" />
-    <option name="LAST_COMMIT_MESSAGE" value="Post File" />
+    <MESSAGE value="API terminated" />
+    <MESSAGE value="added requirements" />
+    <option name="LAST_COMMIT_MESSAGE" value="added requirements" />
   </component>
 </project>

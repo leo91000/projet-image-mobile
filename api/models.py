@@ -53,7 +53,6 @@ class File(models.Model):
         return cosine_similarity(np.array(vec1).reshape(1, -1), np.array(vec2).reshape(1, -1))[0][0]
 
 
-
 class FeatureWeigth(models.Model):
     feature = models.ForeignKey(Feature, on_delete=models.PROTECT)
     probability = models.FloatField()
