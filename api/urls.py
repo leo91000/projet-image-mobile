@@ -1,6 +1,6 @@
 from django.urls import path
-from api import views
+from api.views import ImageView
 
 urlpatterns = [
-    path('', views.index, name='index'),
-]
+    path('images', ImageView.as_view()),
+];
