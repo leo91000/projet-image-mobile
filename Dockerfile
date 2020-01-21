@@ -1,10 +1,12 @@
-FROM python:3.4
+FROM python:3.7
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         postgresql-client \
     && rm -rf /var/lib/apt/lists/*
-
+RUN pip install --upgrade setuptools
+RUN pip install gcloud
+RUN pip install --upgrade pip
 WORKDIR /usr/src/app
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
