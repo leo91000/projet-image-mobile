@@ -4,6 +4,7 @@ from api.models import File
 
 class FileSerializer(serializers.ModelSerializer):
     file = serializers.FileField(use_url=False)
+    indexed = serializers.BooleanField(default=False)
 
     class Meta:
         model = File

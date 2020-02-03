@@ -27,7 +27,7 @@ class ImageDistanceClassifier:
     def get_distances(self):
         vector_list = {}
 
-        for file in File.objects.all():
+        for file in File.objects.filter(indexed=True):
             if file.file.name != self.file.file.name:
                 vector_list[file.file.name] = self.file.get_cosine_distance(file)
 
