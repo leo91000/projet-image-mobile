@@ -47,7 +47,8 @@ class ImageIdView(APIView):
 class IndexerView(APIView):
     parser_classes = (JSONParser,)
 
-    def get(self):
+    @staticmethod
+    def get():
         try:
             FeatureWeigth.objects.filter(file__indexed=True).delete()
             File.objects.filter(indexed=True).delete()

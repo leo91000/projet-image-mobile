@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0950f5b-a8ee-4e20-8386-552c9f6e186e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/api/management/commands/index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -182,7 +185,7 @@
       <workItem from="1579358575799" duration="18159000" />
       <workItem from="1579514929762" duration="8576000" />
       <workItem from="1579607446006" duration="3906000" />
-      <workItem from="1580722954583" duration="9530000" />
+      <workItem from="1580722954583" duration="10053000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1577128123979</created>
@@ -247,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580740318318</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Images">
+      <created>1580740380435</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1580740380435</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
