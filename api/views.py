@@ -67,6 +67,7 @@ class IndexerView(APIView):
                     file_model.save()
                     features_extractor = ImageFeatureExtraction(file_model)
                     features_extractor.get_features()
+                    print(unique_name)
             return Response({"success": True}, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({"success": False, "message": e.args[0]})
