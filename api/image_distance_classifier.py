@@ -18,7 +18,7 @@ class ImageDistanceClassifier:
             if i > 4:
                 break
             output.append({
-                "url": "/static/" + k,
+                "url": "ns3017873.ip-149-202-86.eu:8001/" + k,
                 "score": v
             })
             i += 1

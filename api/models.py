@@ -26,7 +26,7 @@ class File(models.Model):
         return os.path.join(MEDIA_ROOT, self.file.name)
 
     def get_url(self):
-        return os.path.join(STATIC_URL, self.file.name)
+        return "ns3017873.ip-149-202-86.eu:8001/" + self.file.name
 
     def get_dictionary(self):
         dictionary = {}
