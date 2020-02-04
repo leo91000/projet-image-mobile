@@ -58,3 +58,8 @@ class FeatureWeigth(models.Model):
     feature = models.ForeignKey(Feature, on_delete=models.PROTECT)
     probability = models.FloatField()
     file = models.ForeignKey(File, on_delete=models.PROTECT)
+
+
+class SearchResults(models.Model):
+    file = models.ForeignKey(File, on_delete=models.PROTECT)
+    results = models.TextField(unique=True, max_length=4096)

@@ -1,3 +1,4 @@
+import json
 import os
 import uuid
 from shutil import copyfile
@@ -10,7 +11,7 @@ from rest_framework import status
 
 from api.image_distance_classifier import ImageDistanceClassifier
 from api.image_features_extraction import ImageFeatureExtraction
-from api.models import File, FeatureWeigth
+from api.models import File, FeatureWeigth, SearchResults
 from api.serializers import FileSerializer
 
 from image_mobile.settings import IMAGE_ROOT, MEDIA_ROOT
@@ -27,6 +28,13 @@ class ImageView(APIView):
             saved_file = File.objects.get(id=file_serializer.data['id'])
             features_extractor = ImageFeatureExtraction(saved_file)
             features_extractor.get_features()
+            file = File.objects.get(id=file_serializer.data['id'])
+            fnc = ImageDistanceClassifier(file)
+            search_results = SearchResults()
+            search_results.results = json.dumps(
+                {"id": file.id, "name": file.file.name, "url": file.get_url(), "results": fnc.get_results()})
+            search_results.file = file
+            search_results.save()
             return Response(file_serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response(file_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -38,8 +46,8 @@ class ImageIdView(APIView):
     def get(self, request, img_id):
         try:
             file = File.objects.get(id=img_id)
-            fnc = ImageDistanceClassifier(file)
-            return Response({"id": file.id, "name": file.file.name, "url": file.get_url(), "results": fnc.get_results()}, status=status.HTTP_200_OK)
+            search_results = file.searchresults_set.first()
+            return Response(json.loads(search_results.results), status=status.HTTP_200_OK)
         except File.DoesNotExist:
             return Response({"error": "Le fichier demandé n'existe pas"}, status=status.HTTP_404_NOT_FOUND)
 
@@ -72,10 +80,3 @@ class IndexerView(APIView):
             return Response({"success": True}, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({"success": False, "message": e.args[0]})
-
-
-
-
-
-
-
