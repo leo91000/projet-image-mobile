@@ -21,23 +21,26 @@ class ImageView(APIView):
     parser_classes = (MultiPartParser,)
 
     def post(self, request, *args, **kwargs):
-        data = request.FILES
-        file_serializer = FileSerializer(data=data)
-        if file_serializer.is_valid():
-            file_serializer.save()
-            saved_file = File.objects.get(id=file_serializer.data['id'])
-            features_extractor = ImageFeatureExtraction(saved_file)
-            features_extractor.get_features()
-            file = File.objects.get(id=file_serializer.data['id'])
-            fnc = ImageDistanceClassifier(file)
-            search_results = SearchResults()
-            search_results.results = json.dumps(
-                {"id": file.id, "name": file.file.name, "url": file.get_url(), "results": fnc.get_results()})
-            search_results.file = file
-            search_results.save()
-            return Response(file_serializer.data, status=status.HTTP_201_CREATED)
-        else:
-            return Response(file_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        try:
+            data = request.FILES
+            file_serializer = FileSerializer(data=data)
+            if file_serializer.is_valid():
+                file_serializer.save()
+                saved_file = File.objects.get(id=file_serializer.data['id'])
+                features_extractor = ImageFeatureExtraction(saved_file)
+                features_extractor.get_features()
+                file = File.objects.get(id=file_serializer.data['id'])
+                fnc = ImageDistanceClassifier(file)
+                search_results = SearchResults()
+                search_results.results = json.dumps(
+                    {"id": file.id, "name": file.file.name, "url": file.get_url(), "results": fnc.get_results()})
+                search_results.file = file
+                search_results.save()
+                return Response(file_serializer.data, status=status.HTTP_201_CREATED)
+            else:
+                return Response(file_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            return Response(e.args[0], status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class ImageIdView(APIView):
