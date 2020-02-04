@@ -18,7 +18,7 @@ from image_mobile.settings import IMAGE_ROOT, MEDIA_ROOT
 
 
 class ImageView(APIView):
-    parser_classes = (FileUploadParser,)
+    parser_classes = (MultiPartParser,)
 
     def post(self, request, *args, **kwargs):
         data = request.FILES
