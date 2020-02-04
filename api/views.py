@@ -40,6 +40,7 @@ class ImageView(APIView):
             else:
                 return Response(file_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
+            print(e.args[0])
             return Response({"error": e.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
