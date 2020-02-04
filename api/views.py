@@ -46,8 +46,14 @@ class ImageIdView(APIView):
     def get(self, request, img_id):
         try:
             file = File.objects.get(id=img_id)
-            search_results = file.searchresults_set.first()
-            return Response(json.loads(search_results.results), status=status.HTTP_200_OK)
+            if file.searchresults_set.all().exists():
+                search_results = file.searchresults_set.first()
+                return Response(json.loads(search_results.results), status=status.HTTP_200_OK)
+            else:
+                fnc = ImageDistanceClassifier(file)
+                return Response(
+                    {"id": file.id, "name": file.file.name, "url": file.get_url(), "results": fnc.get_results()},
+                    status=status.HTTP_200_OK)
         except File.DoesNotExist:
             return Response({"error": "Le fichier demandé n'existe pas"}, status=status.HTTP_404_NOT_FOUND)
 
