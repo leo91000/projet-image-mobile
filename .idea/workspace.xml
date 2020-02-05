@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a0950f5b-a8ee-4e20-8386-552c9f6e186e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/image_distance_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/image_distance_classifier.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -185,6 +185,7 @@
       <workItem from="1579607446006" duration="3906000" />
       <workItem from="1580722954583" duration="11115000" />
       <workItem from="1580808343634" duration="5292000" />
+      <workItem from="1580897842582" duration="2595000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1577128123979</created>

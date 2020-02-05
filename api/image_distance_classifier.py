@@ -4,7 +4,7 @@ from api.models import File
 
 
 class ImageDistanceClassifier:
-    file = File()
+    file: File
 
     def __init__(self, file):
         self.file = file
@@ -26,8 +26,12 @@ class ImageDistanceClassifier:
 
     def get_distances(self):
         vector_list = {}
+        feature_list = []
+        feature_weigth_list = self.file.featureweigth_set.all()
+        for ft in feature_weigth_list:
+            feature_list.append(ft.feature.label)
 
-        for file in File.objects.filter(indexed=True):
+        for file in File.objects.filter(indexed=True, featureweigth__feature__label__in=feature_list):
             if file.file.name != self.file.file.name:
                 vector_list[file.file.name] = self.file.get_cosine_distance(file)
 
