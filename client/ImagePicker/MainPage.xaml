@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="ImagePicker.MainPage" BackgroundColor="#A40067" BarBackgroundColor="#A40067" BarTextColor="#FFFFFF">
+
+    <!-- HOME -->
+
+    <ContentPage Title="Home">
+        <StackLayout Padding="20, 35, 20, 20" VerticalOptions="End">
+
+        <!-- Place new controls here -->
+        <Image x:Name="photoTakenViewer"></Image>
+        <Label x:Name="debugger" Text="DEBUG"></Label>
+        <Label x:Name="debugger2" Text="DEBUG2"></Label>
+        <Image x:Name="imageViewer" VerticalOptions="Center" />
+        <Button Text="Select a picture" TextColor="#A40067" Font="Bold, 20" x:Name="imageUploadButton" Clicked="imageUploadButton_ClickedAsync"></Button>
+        <ActivityIndicator x:Name="activityIndicator" IsVisible="false" IsRunning="False"></ActivityIndicator>
+
+        </StackLayout>
+    </ContentPage>
+
+    <!-- RESULTS -->
+
+    <ContentPage Title="Results">
+        <StackLayout Padding="20, 35, 20, 20">
+            <Label Text="Results" FontAttributes="Bold"></Label>
+            <ListView x:Name="queryView" SelectionMode="Single" ItemTapped="queryView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="5, 0, 0, 0">
+                                <Label Text="{Binding .}" HorizontalOptions="Start"></Label>
+                                <Label Text="timestamp" HorizontalOptions="End" VerticalOptions="End"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage>
+
+    <!-- SETTINGS -->
+
+    <ContentPage Title="Settings">
+
+        <StackLayout>
+            
+            <TableView Intent="Settings">
+                <TableRoot>
+                    <TableSection Title="Caching">
+                        <TextCell><TextCell.Text>Delete cache</TextCell.Text></TextCell>
+                    </TableSection>
+                    <TableSection Title="Debugging">
+                        <SwitchCell x:Name="debugSwitch" Text="Enable debugger" On="False" />
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+        </StackLayout>
+    </ContentPage>
+</TabbedPage>
