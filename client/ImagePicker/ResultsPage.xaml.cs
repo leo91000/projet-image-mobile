@@ -27,7 +27,6 @@ namespace ImagePicker
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
 
             resultList = results;
-            debugger.Text = "custom consutrctor adipiscing elit";
 
             if (sentPicUrl == "")
                 sentImageViewer.Source = "";
@@ -37,7 +36,6 @@ namespace ImagePicker
 
         async void resultsView_ItemTapped(System.Object sender, Xamarin.Forms.ItemTappedEventArgs e)
         {
-            //ResultZoom resultZoom = new ResultZoom();
             Result r = resultList[e.ItemIndex];
             ResultZoom resultZoom = new ResultZoom(e.ItemIndex, r);
             await Navigation.PushAsync(resultZoom);

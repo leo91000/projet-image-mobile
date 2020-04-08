@@ -6,7 +6,6 @@ namespace ImagePicker
 {
     public interface ISendImage
     {
-        //[Get("/api/img_searches/3807")]
         [Get ("/")]
         Task<ResponseImage> GetName();
 

@@ -6,10 +6,8 @@
     <ContentPage Title="Home">
         <StackLayout Padding="20, 35, 20, 20" VerticalOptions="End">
 
-        <!-- Place new controls here -->
-        <Image x:Name="photoTakenViewer"></Image>
-        <Label x:Name="debugger" Text="DEBUG"></Label>
-        <Label x:Name="debugger2" Text="DEBUG2"></Label>
+        <Label x:Name="debugger" Text="DEBUG" IsVisible="False" TextColor="DarkSlateGray"></Label>
+        <Label x:Name="debugger2" Text="DEBUG2" IsVisible="False" TextColor="DarkSlateGray"></Label>
         <Image x:Name="imageViewer" VerticalOptions="Center" />
         <Button Text="Select a picture" TextColor="#A40067" Font="Bold, 20" x:Name="imageUploadButton" Clicked="imageUploadButton_ClickedAsync"></Button>
         <ActivityIndicator x:Name="activityIndicator" IsVisible="false" IsRunning="False"></ActivityIndicator>
@@ -27,8 +25,7 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="5, 0, 0, 0">
-                                <Label Text="{Binding .}" HorizontalOptions="Start"></Label>
-                                <Label Text="timestamp" HorizontalOptions="End" VerticalOptions="End"></Label>
+                                <Label Text="{Binding .}" HorizontalOptions="Start" VerticalOptions="Center"></Label>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
@@ -41,18 +38,11 @@
 
     <ContentPage Title="Settings">
 
-        <StackLayout>
-            
-            <TableView Intent="Settings">
-                <TableRoot>
-                    <TableSection Title="Caching">
-                        <TextCell><TextCell.Text>Delete cache</TextCell.Text></TextCell>
-                    </TableSection>
-                    <TableSection Title="Debugging">
-                        <SwitchCell x:Name="debugSwitch" Text="Enable debugger" On="False" />
-                    </TableSection>
-                </TableRoot>
-            </TableView>
+        <StackLayout Padding="20, 35, 20, 20">
+
+            <Label Text="Enable debugger"></Label>
+            <Switch x:Name="enableDebuggerSwitch" IsToggled="False" Toggled="enableDebuggerSwitch_Toggled"></Switch>
+            <Button x:Name="deleteCacheButton" Text="Delete cache" Clicked="deleteCacheButton_Clicked"></Button>
 
         </StackLayout>
     </ContentPage>

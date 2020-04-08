@@ -2,7 +2,6 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ImagePicker.ResultsPage">
     <StackLayout Margin="15, 20, 15, 0" Padding="0, 0, 0, 0">
         <Label x:Name="queryNumberLabel" Text="Query #" FontAttributes="Bold"></Label>
-        <Label x:Name="debugger"></Label>
         <Image x:Name="sentImageViewer" Source="{Binding sentImageUrl}"></Image>
         <Label Text="{Binding sentImageUrl}"></Label>
         <ListView x:Name="resultsView" RowHeight="100" ItemTapped="resultsView_ItemTapped">
