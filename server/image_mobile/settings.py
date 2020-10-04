@@ -31,6 +31,7 @@ MEDIA_URL = '/img/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 IMAGE_ROOT = os.path.join(BASE_DIR, "indexed_images")
+UPLOADED_IMAGE_ROOT = os.path.join(MEDIA_ROOT, "uploads")
 
 
 # Application definition

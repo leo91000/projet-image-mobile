@@ -5,6 +5,9 @@ import uuid
 from mimetypes import guess_type
 from shutil import copyfile
 
+from django.core.files.base import ContentFile
+from django.core.files.storage import default_storage
+from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseServerError
 from django.shortcuts import redirect
 from django.views.generic import ListView
@@ -19,7 +22,7 @@ from api.image_features_extraction import ImageFeatureExtraction
 from api.models import File, FeatureWeigth, SearchResults
 from api.serializers import FileSerializer
 
-from image_mobile.settings import IMAGE_ROOT, MEDIA_ROOT
+from image_mobile.settings import IMAGE_ROOT, MEDIA_ROOT, UPLOADED_IMAGE_ROOT
 
 
 class ImageView(APIView):
@@ -27,23 +30,35 @@ class ImageView(APIView):
 
     def post(self, request, *args, **kwargs):
         try:
-            data = request.FILES
-            file_serializer = FileSerializer(data=data)
-            if file_serializer.is_valid():
-                file_serializer.save()
-                saved_file = File.objects.get(id=file_serializer.data['id'])
-                features_extractor = ImageFeatureExtraction(saved_file)
+            data = request.FILES['file']
+            if isinstance(data, InMemoryUploadedFile):
+                if not os.path.exists(UPLOADED_IMAGE_ROOT):
+                    os.makedirs(UPLOADED_IMAGE_ROOT)
+
+                file_name = data.name
+                if file_name.endswith('"'):
+                    file_name = file_name[:-1]
+                file_path = os.path.join(UPLOADED_IMAGE_ROOT, str(uuid.uuid4()))
+                with default_storage.open(file_path, "wb+") as destination:
+                    for chunk in data.chunks():
+                        destination.write(chunk)
+
+                file = File()
+                file.file_path = file_path
+                file.file_name = file_name
+                file.indexed = False
+                file.save()
+                features_extractor = ImageFeatureExtraction(file)
                 features_extractor.get_features()
-                file = File.objects.get(id=file_serializer.data['id'])
                 fnc = ImageDistanceClassifier(file)
                 search_results = SearchResults()
-                search_results.results = json.dumps(
-                    {"id": file.id, "name": file.file.name, "url": file.get_url(), "results": fnc.get_results()})
+                search_results.results = json.dumps({"id": file.id, "name": file.file_name, "url": file.get_url(), "results": fnc.get_results()})
                 search_results.file = file
                 search_results.save()
-                return Response(file_serializer.data, status=status.HTTP_201_CREATED)
+                return Response({"id": file.id, "indexed": file.indexed, "file": {"name": file.file_name}}, status=status.HTTP_201_CREATED)
+
             else:
-                return Response(file_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+                return Response({"file": ["This field is required", "This field should be an uploaded file"]}, status=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
             print(e.args[0])
             return Response({"error": e.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -61,7 +76,7 @@ class ImageIdView(APIView):
             else:
                 fnc = ImageDistanceClassifier(file)
                 return Response(
-                    {"id": file.id, "name": file.file.name, "url": file.get_url(), "results": fnc.get_results()},
+                    {"id": file.id, "name": file.file_name, "url": file.get_url(), "results": fnc.get_results()},
                     status=status.HTTP_200_OK)
         except File.DoesNotExist:
             return Response({"error": "Le fichier demandé n'existe pas"}, status=status.HTTP_404_NOT_FOUND)
@@ -80,7 +95,7 @@ class ImageFileView(View):
                     with open(file.get_path(), "rb") as f:
                         file_data = f.read()
 
-                    response = HttpResponse(file_data, content_type=guess_type(file.file_name))
+                    response = HttpResponse(file_data, content_type=guess_type(file.file_name)[0])
                     response['Content-Disposition'] = 'attachment; filename="' + file.file_name + '"'
                 except IOError:
                     response = HttpResponseNotFound("<h1>Le fichier demandé n'existe pas (IOError)</h1>")

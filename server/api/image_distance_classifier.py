@@ -18,7 +18,7 @@ class ImageDistanceClassifier:
             if i > 4:
                 break
             output.append({
-                "url": "ns3017873.ip-149-202-86.eu:8001/" + k,
+                "url": k,
                 "score": v
             })
             i += 1
@@ -32,7 +32,7 @@ class ImageDistanceClassifier:
             feature_list.append(ft.feature.label)
 
         for file in File.objects.filter(indexed=True, featureweigth__feature__label__in=feature_list):
-            if file.file.name != self.file.file.name:
-                vector_list[file.file.name] = self.file.get_cosine_distance(file)
+            if file.file_name != self.file.file_name:
+                vector_list[file.get_url()] = self.file.get_cosine_distance(file)
 
         return vector_list

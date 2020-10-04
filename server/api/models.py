@@ -1,4 +1,5 @@
 import os
+from urllib.parse import quote
 
 import numpy as np
 from django.db import models
@@ -27,7 +28,7 @@ class File(models.Model):
         return self.file_path
 
     def get_url(self):
-        return "/api/images/" + str(self.id) + "/" + self.file_name
+        return "/api/images/" + str(self.id) + "/" + quote(self.file_name)
 
     def get_dictionary(self):
         dictionary = {}
