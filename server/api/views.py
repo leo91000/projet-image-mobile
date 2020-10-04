@@ -1,10 +1,11 @@
 import json
 import os
+import traceback
 import uuid
 from mimetypes import guess_type
 from shutil import copyfile
 
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseServerError
 from django.shortcuts import redirect
 from django.views.generic import ListView
 from django.views.generic.base import View
@@ -68,24 +69,26 @@ class ImageIdView(APIView):
 
 class ImageFileView(View):
     def get(self, request, img_id, img_name):
-        file = File.objects.get(id=img_id)
-        if file.searchresults_set.all().exists():
-            search_results = file.searchresults_set.first()
-            if search_results.file.file_name != img_name:
-                return redirect(search_results.file.get_url())
+        try:
+            print("View image", img_id, img_name)
+            file = File.objects.get(id=img_id)
+            if file:
+                if file.file_name != img_name:
+                    return redirect(file.get_url())
 
-            try:
-                with open(search_results.file.get_path()) as f:
-                    file_data = f.read()
+                try:
+                    with open(file.get_path(), "rb") as f:
+                        file_data = f.read()
 
-                response = HttpResponse(file_data, content_type=guess_type(search_results.file.file_name))
-                response['Content-Disposition'] = 'attachment; filename="' + search_results.file.file_name + '"'
-            except IOError:
+                    response = HttpResponse(file_data, content_type=guess_type(file.file_name))
+                    response['Content-Disposition'] = 'attachment; filename="' + file.file_name + '"'
+                except IOError:
+                    response = HttpResponseNotFound("<h1>Le fichier demandé n'existe pas (IOError)</h1>")
+            else:
                 response = HttpResponseNotFound("<h1>Le fichier demandé n'existe pas</h1>")
-        else:
+        except File.DoesNotExist:
             response = HttpResponseNotFound("<h1>Le fichier demandé n'existe pas</h1>")
         return response
-
 
 
 class IndexerView(APIView):
