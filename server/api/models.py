@@ -16,17 +16,18 @@ class Feature(models.Model):
 
 
 class File(models.Model):
-    file = models.ImageField(blank=False, null=False)
+    file_name = models.TextField(null=False)
+    file_path = models.TextField(null=False)
     indexed = models.BooleanField(null=False)
 
     def __str__(self):
-        return self.file.name
+        return self.file_name
 
     def get_path(self):
-        return os.path.join(MEDIA_ROOT, self.file.name)
+        return self.file_path
 
     def get_url(self):
-        return "ns3017873.ip-149-202-86.eu:8001/" + self.file.name
+        return "/api/images/" + str(self.id) + "/" + self.file_name
 
     def get_dictionary(self):
         dictionary = {}

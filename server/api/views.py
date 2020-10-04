@@ -1,9 +1,13 @@
 import json
 import os
 import uuid
+from mimetypes import guess_type
 from shutil import copyfile
 
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound
+from django.shortcuts import redirect
+from django.views.generic import ListView
+from django.views.generic.base import View
 from rest_framework.parsers import FileUploadParser, MultiPartParser, JSONParser
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -62,6 +66,28 @@ class ImageIdView(APIView):
             return Response({"error": "Le fichier demandé n'existe pas"}, status=status.HTTP_404_NOT_FOUND)
 
 
+class ImageFileView(View):
+    def get(self, request, img_id, img_name):
+        file = File.objects.get(id=img_id)
+        if file.searchresults_set.all().exists():
+            search_results = file.searchresults_set.first()
+            if search_results.file.file_name != img_name:
+                return redirect(search_results.file.get_url())
+
+            try:
+                with open(search_results.file.get_path()) as f:
+                    file_data = f.read()
+
+                response = HttpResponse(file_data, content_type=guess_type(search_results.file.file_name))
+                response['Content-Disposition'] = 'attachment; filename="' + search_results.file.file_name + '"'
+            except IOError:
+                response = HttpResponseNotFound("<h1>Le fichier demandé n'existe pas</h1>")
+        else:
+            response = HttpResponseNotFound("<h1>Le fichier demandé n'existe pas</h1>")
+        return response
+
+
+
 class IndexerView(APIView):
     parser_classes = (JSONParser,)
 
@@ -76,17 +102,14 @@ class IndexerView(APIView):
                     path = line.split(" ", 1)[0].replace('/', os.sep)
                     file_path = os.path.join(IMAGE_ROOT, path)
                     filename = os.path.basename(file_path)
-                    filename_no_extension, file_extension = os.path.splitext(filename)
-                    unique_name = filename_no_extension + "_" + str(uuid.uuid4()) + file_extension
-                    generated_path = os.path.join(MEDIA_ROOT, unique_name)
-                    copyfile(file_path, generated_path)
                     file_model = File()
-                    file_model.file.name = unique_name
+                    file_model.file_name = filename
+                    file_model.file_path = file_path
                     file_model.indexed = True
                     file_model.save()
                     features_extractor = ImageFeatureExtraction(file_model)
                     features_extractor.get_features()
-                    print(unique_name)
+                    print("Analyzed " + path)
             return Response({"success": True}, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({"success": False, "message": e.args[0]})

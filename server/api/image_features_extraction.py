@@ -33,3 +33,7 @@ class ImageFeatureExtraction:
             feature_weight.file = self.file
             feature_weight.probability = prediction[2]
             feature_weight.save()
+
+    @staticmethod
+    def get_summary():
+        return VGG16(weights='imagenet', include_top=True).summary()
