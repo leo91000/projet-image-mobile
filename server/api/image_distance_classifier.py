@@ -32,7 +32,7 @@ class ImageDistanceClassifier:
             feature_list.append(ft.feature.label)
 
         for file in File.objects.filter(indexed=True, featureweigth__feature__label__in=feature_list):
-            if file.file_name != self.file.file_name:
+            if file.id != self.file.id:
                 vector_list[file.get_url()] = self.file.get_cosine_distance(file)
 
         return vector_list

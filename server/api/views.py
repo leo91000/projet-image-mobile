@@ -31,6 +31,10 @@ class ImageView(APIView):
     def post(self, request, *args, **kwargs):
         try:
             data = request.FILES['file']
+            index_image = \
+                request.data['index'] == '1' or \
+                request.data['index'] == 'True' or \
+                request.data['index'] == 'true'
             if isinstance(data, InMemoryUploadedFile):
                 if not os.path.exists(UPLOADED_IMAGE_ROOT):
                     os.makedirs(UPLOADED_IMAGE_ROOT)
@@ -46,7 +50,7 @@ class ImageView(APIView):
                 file = File()
                 file.file_path = file_path
                 file.file_name = file_name
-                file.indexed = False
+                file.indexed = index_image
                 file.save()
                 features_extractor = ImageFeatureExtraction(file)
                 features_extractor.get_features()
