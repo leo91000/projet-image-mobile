@@ -52,13 +52,16 @@ class ImageView(APIView):
                 features_extractor.get_features()
                 fnc = ImageDistanceClassifier(file)
                 search_results = SearchResults()
-                search_results.results = json.dumps({"id": file.id, "name": file.file_name, "url": file.get_url(), "results": fnc.get_results()})
+                search_results.results = json.dumps(
+                    {"id": file.id, "name": file.file_name, "url": file.get_url(), "results": fnc.get_results()})
                 search_results.file = file
                 search_results.save()
-                return Response({"id": file.id, "indexed": file.indexed, "file": {"name": file.file_name}}, status=status.HTTP_201_CREATED)
+                return Response({"id": file.id, "indexed": file.indexed, "file": {"name": file.file_name}},
+                                status=status.HTTP_201_CREATED)
 
             else:
-                return Response({"file": ["This field is required", "This field should be an uploaded file"]}, status=status.HTTP_400_BAD_REQUEST)
+                return Response({"file": ["This field is required", "This field should be an uploaded file"]},
+                                status=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
             print(e.args[0])
             return Response({"error": e.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -72,7 +75,9 @@ class ImageIdView(APIView):
             file = File.objects.get(id=img_id)
             if file.searchresults_set.all().exists():
                 search_results = file.searchresults_set.first()
-                return Response(json.loads(search_results.results), status=status.HTTP_200_OK)
+                data = json.loads(search_results.results)
+                data['feedback'] = search_results.feedback
+                return Response(data, status=status.HTTP_200_OK)
             else:
                 fnc = ImageDistanceClassifier(file)
                 return Response(
@@ -104,6 +109,22 @@ class ImageFileView(View):
         except File.DoesNotExist:
             response = HttpResponseNotFound("<h1>Le fichier demandé n'existe pas</h1>")
         return response
+
+
+class FeedbackView(APIView):
+    parser_classes = (JSONParser,)
+
+    def post(self, request, img_id):
+        file = File.objects.get(id=img_id)
+        if file.searchresults_set.all().exists():
+            search_results = file.searchresults_set.first()
+            data = request.data
+            data['img_id'] = img_id
+            search_results.feedback = data['relevance']
+            search_results.save()
+            return Response(data, status=status.HTTP_200_OK)
+        else:
+            return HttpResponseNotFound({'error': 'L\'ID ' + img_id + 'n\'existe pas en BDD, vérifiez votre requête'})
 
 
 class IndexerView(APIView):

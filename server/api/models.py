@@ -65,3 +65,4 @@ class FeatureWeigth(models.Model):
 class SearchResults(models.Model):
     file = models.ForeignKey(File, on_delete=models.PROTECT)
     results = models.TextField(unique=True, max_length=4096)
+    feedback = models.IntegerField(null=True)
