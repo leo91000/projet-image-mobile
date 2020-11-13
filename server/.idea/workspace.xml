@@ -19,19 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bfc44f2a-7568-43f0-9efd-e8a5a681b864" name="Default Changelist" comment="feat(api): Ajout d'image pour indexation #4">
-      <change afterPath="$PROJECT_DIR$/../application/src/pages/AddImageToDatabase.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../application/src/pages/Home.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../application/src/pages/SimilarImageSearch.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/image_distance_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/image_distance_classifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image_mobile/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/image_mobile/settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="bfc44f2a-7568-43f0-9efd-e8a5a681b864" name="Default Changelist" comment="feat(api): Ajout d'image pour indexation #4" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -125,7 +113,7 @@
       <workItem from="1605109052894" duration="3896000" />
       <workItem from="1605169169184" duration="597000" />
       <workItem from="1605263838272" duration="3383000" />
-      <workItem from="1605276099821" duration="1624000" />
+      <workItem from="1605276099821" duration="2341000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Ajout du relevance feedback pour l'api #5">
       <created>1605109394671</created>
@@ -141,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605116314108</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat(api): Ajout d'image pour indexation #4">
+      <created>1605278148537</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1605278148537</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,10 +216,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="273" y="334" width="998" height="717" key="SettingsEditor/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1604834476197" />
-    <state x="872" y="428" key="Vcs.Push.Dialog.v2" timestamp="1605116351627">
+    <state x="872" y="428" key="Vcs.Push.Dialog.v2" timestamp="1605278150302">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="428" key="Vcs.Push.Dialog.v2/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605116351627" />
+    <state x="872" y="428" key="Vcs.Push.Dialog.v2/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605278150302" />
     <state x="348" y="279" width="583" height="849" key="find.popup" timestamp="1605276528530">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
