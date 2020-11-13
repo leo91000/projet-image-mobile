@@ -19,10 +19,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bfc44f2a-7568-43f0-9efd-e8a5a681b864" name="Default Changelist" comment="feat: Ajout du relevance feedback pour l'api #5">
+    <list default="true" id="bfc44f2a-7568-43f0-9efd-e8a5a681b864" name="Default Changelist" comment="feat(api): Ajout d'image pour indexation #4">
+      <change afterPath="$PROJECT_DIR$/../application/src/pages/AddImageToDatabase.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../application/src/pages/Home.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../application/src/pages/SimilarImageSearch.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/image_distance_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/image_distance_classifier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image_mobile/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/image_mobile/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +122,10 @@
       <workItem from="1604834000046" duration="37000" />
       <workItem from="1604834401843" duration="928000" />
       <workItem from="1605036302778" duration="3532000" />
-      <workItem from="1605109052894" duration="3544000" />
+      <workItem from="1605109052894" duration="3896000" />
+      <workItem from="1605169169184" duration="597000" />
+      <workItem from="1605263838272" duration="3383000" />
+      <workItem from="1605276099821" duration="1624000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Ajout du relevance feedback pour l'api #5">
       <created>1605109394671</created>
@@ -123,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605109394671</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat(api): Ajout d'image pour indexation #4">
+      <created>1605116314108</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1605116314108</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,53 +161,54 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: Ajout du relevance feedback pour l'api #5" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Ajout du relevance feedback pour l'api #5" />
+    <MESSAGE value="feat(api): Ajout d'image pour indexation #4" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(api): Ajout d'image pour indexation #4" />
   </component>
   <component name="WindowStateProjectService">
     <state x="872" y="358" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604834583246">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="872" y="358" key="#com.intellij.execution.impl.EditConfigurationsDialog/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1604834583246" />
-    <state x="1035" y="316" key="#xdebugger.evaluate" timestamp="1605042959445">
+    <state x="1035" y="316" width="899" height="767" key="#xdebugger.evaluate" timestamp="1605266578763">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1035" y="316" key="#xdebugger.evaluate/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605042959445" />
+    <state x="1035" y="316" width="899" height="767" key="#xdebugger.evaluate/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605266578763" />
     <state x="1059" y="454" key="FileChooserDialogImpl" timestamp="1604832006764">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1059" y="454" key="FileChooserDialogImpl/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1604832006764" />
-    <state width="1258" height="484" key="GridCell.Tab.0.bottom" timestamp="1605115040743">
+    <state width="1233" height="415" key="GridCell.Tab.0.bottom" timestamp="1605276513495">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1258" height="484" key="GridCell.Tab.0.bottom/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605115040743" />
-    <state width="1258" height="484" key="GridCell.Tab.0.center" timestamp="1605115040743">
+    <state width="1233" height="415" key="GridCell.Tab.0.bottom/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605276513495" />
+    <state width="1233" height="415" key="GridCell.Tab.0.center" timestamp="1605276513495">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1258" height="484" key="GridCell.Tab.0.center/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605115040743" />
-    <state width="1258" height="484" key="GridCell.Tab.0.left" timestamp="1605115040743">
+    <state width="1233" height="415" key="GridCell.Tab.0.center/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605276513495" />
+    <state width="1233" height="415" key="GridCell.Tab.0.left" timestamp="1605276513495">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1258" height="484" key="GridCell.Tab.0.left/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605115040743" />
-    <state width="1258" height="484" key="GridCell.Tab.0.right" timestamp="1605115040743">
+    <state width="1233" height="415" key="GridCell.Tab.0.left/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605276513495" />
+    <state width="1233" height="415" key="GridCell.Tab.0.right" timestamp="1605276513495">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1258" height="484" key="GridCell.Tab.0.right/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605115040743" />
-    <state width="1258" height="484" key="GridCell.Tab.1.bottom" timestamp="1605115080927">
+    <state width="1233" height="415" key="GridCell.Tab.0.right/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605276513495" />
+    <state width="616" height="481" key="GridCell.Tab.1.bottom" timestamp="1605266824387">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1258" height="484" key="GridCell.Tab.1.bottom/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605115080927" />
-    <state width="1258" height="484" key="GridCell.Tab.1.center" timestamp="1605115080927">
+    <state width="616" height="481" key="GridCell.Tab.1.bottom/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605266824387" />
+    <state width="616" height="481" key="GridCell.Tab.1.center" timestamp="1605266824387">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1258" height="484" key="GridCell.Tab.1.center/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605115080927" />
-    <state width="1258" height="484" key="GridCell.Tab.1.left" timestamp="1605115080927">
+    <state width="616" height="481" key="GridCell.Tab.1.center/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605266824387" />
+    <state width="616" height="481" key="GridCell.Tab.1.left" timestamp="1605266824387">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1258" height="484" key="GridCell.Tab.1.left/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605115080927" />
-    <state width="1258" height="484" key="GridCell.Tab.1.right" timestamp="1605115080927">
+    <state width="616" height="481" key="GridCell.Tab.1.left/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605266824387" />
+    <state width="616" height="481" key="GridCell.Tab.1.right" timestamp="1605266824387">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1258" height="484" key="GridCell.Tab.1.right/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605115080927" />
+    <state width="616" height="481" key="GridCell.Tab.1.right/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605266824387" />
     <state width="196" height="539" key="HiddenNamespacesPopup" timestamp="1604834589287">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -202,27 +221,26 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="273" y="334" width="998" height="717" key="SettingsEditor/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1604834476197" />
-    <state x="348" y="279" width="583" height="849" key="find.popup" timestamp="1605043736356">
+    <state x="872" y="428" key="Vcs.Push.Dialog.v2" timestamp="1605116351627">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="348" y="279" width="583" height="849" key="find.popup/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605043736356" />
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1605041597550">
+    <state x="872" y="428" key="Vcs.Push.Dialog.v2/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605116351627" />
+    <state x="348" y="279" width="583" height="849" key="find.popup" timestamp="1605276528530">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605041597550" />
+    <state x="348" y="279" width="583" height="849" key="find.popup/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605276528530" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1605277060916">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605277060916" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/api/views.py</url>
-          <line>121</line>
+          <line>134</line>
           <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/api/views.py</url>
-          <line>32</line>
-          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -5,6 +5,7 @@ import uuid
 from mimetypes import guess_type
 from shutil import copyfile
 
+from django.core import serializers
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
 from django.core.files.uploadedfile import InMemoryUploadedFile
@@ -25,8 +26,20 @@ from api.serializers import FileSerializer
 from image_mobile.settings import IMAGE_ROOT, MEDIA_ROOT, UPLOADED_IMAGE_ROOT
 
 
+class IndexView(APIView):
+    parser_classes = (JSONParser,)
+
+    def get(self, request):
+        return Response({'alive': True}, status=status.HTTP_200_OK)
+
+
 class ImageView(APIView):
     parser_classes = (MultiPartParser,)
+
+    def get(self, request):
+        files = File.objects.filter(indexed=False)
+        serializer = FileSerializer(files, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request, *args, **kwargs):
         try:
@@ -57,7 +70,7 @@ class ImageView(APIView):
                 fnc = ImageDistanceClassifier(file)
                 search_results = SearchResults()
                 search_results.results = json.dumps(
-                    {"id": file.id, "name": file.file_name, "url": file.get_url(), "results": fnc.get_results()})
+                    {"id": file.id, "name": file.file_name, "url": file.url(), "results": fnc.get_results()})
                 search_results.file = file
                 search_results.save()
                 return Response({"id": file.id, "indexed": file.indexed, "file": {"name": file.file_name}},
@@ -85,7 +98,7 @@ class ImageIdView(APIView):
             else:
                 fnc = ImageDistanceClassifier(file)
                 return Response(
-                    {"id": file.id, "name": file.file_name, "url": file.get_url(), "results": fnc.get_results()},
+                    {"id": file.id, "name": file.file_name, "url": file.url(), "results": fnc.get_results()},
                     status=status.HTTP_200_OK)
         except File.DoesNotExist:
             return Response({"error": "Le fichier demandé n'existe pas"}, status=status.HTTP_404_NOT_FOUND)
@@ -98,7 +111,7 @@ class ImageFileView(View):
             file = File.objects.get(id=img_id)
             if file:
                 if file.file_name != img_name:
-                    return redirect(file.get_url())
+                    return redirect(file.url())
 
                 try:
                     with open(file.get_path(), "rb") as f:

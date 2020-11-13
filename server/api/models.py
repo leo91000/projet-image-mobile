@@ -27,7 +27,7 @@ class File(models.Model):
     def get_path(self):
         return self.file_path
 
-    def get_url(self):
+    def url(self):
         return "/api/images/" + str(self.id) + "/" + quote(self.file_name)
 
     def get_dictionary(self):

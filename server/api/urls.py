@@ -1,9 +1,10 @@
 from django.urls import path
-from api.views import ImageView, ImageIdView, IndexerView, ImageFileView, FeedbackView
+from api.views import ImageView, ImageIdView, IndexerView, ImageFileView, FeedbackView, IndexView
 from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
+    path('', IndexView.as_view()),
     path('img_searches', ImageView.as_view()),
     path('img_searches/<int:img_id>/', ImageIdView.as_view()),
     path('images/<int:img_id>/<str:img_name>', ImageFileView.as_view()),
