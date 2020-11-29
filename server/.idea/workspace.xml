@@ -19,7 +19,81 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bfc44f2a-7568-43f0-9efd-e8a5a681b864" name="Default Changelist" comment="feat(api): Ajout d'image pour indexation #4" />
+    <list default="true" id="bfc44f2a-7568-43f0-9efd-e8a5a681b864" name="Default Changelist" comment="feat(api): Ajout d'image pour indexation #4">
+      <change beforePath="$PROJECT_DIR$/../application/src/pages/AddImageToDatabase.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../application/src/pages/Home.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../application/src/pages/SimilarImageSearch.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Assets/AboutAssets.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/ImagePicker.Android.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/MainActivity.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/PhotoPickerService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Properties/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/AboutResources.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/Resource.designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/layout/Tabbar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/layout/Toolbar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/mipmap-anydpi-v26/icon.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/mipmap-anydpi-v26/icon_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/mipmap-hdpi/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/mipmap-hdpi/launcher_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/mipmap-mdpi/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/mipmap-mdpi/launcher_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/mipmap-xhdpi/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/mipmap-xhdpi/launcher_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/mipmap-xxhdpi/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/mipmap-xxhdpi/launcher_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/mipmap-xxxhdpi/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/mipmap-xxxhdpi/launcher_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/AppDelegate.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Assets.xcassets/AppIcon.appiconset/Icon1024.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Assets.xcassets/AppIcon.appiconset/Icon120.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Assets.xcassets/AppIcon.appiconset/Icon152.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Assets.xcassets/AppIcon.appiconset/Icon167.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Assets.xcassets/AppIcon.appiconset/Icon180.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Assets.xcassets/AppIcon.appiconset/Icon20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Assets.xcassets/AppIcon.appiconset/Icon29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Assets.xcassets/AppIcon.appiconset/Icon40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Assets.xcassets/AppIcon.appiconset/Icon58.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Assets.xcassets/AppIcon.appiconset/Icon60.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Assets.xcassets/AppIcon.appiconset/Icon76.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Assets.xcassets/AppIcon.appiconset/Icon80.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Assets.xcassets/AppIcon.appiconset/Icon87.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Entitlements.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/ImagePicker.iOS.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/ImageViewController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Main.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/MessageIOS.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/PhotoPickerService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Resources/Default-568h@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Resources/Default-Portrait.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Resources/Default-Portrait@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Resources/Default.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Resources/Default@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Resources/LaunchScreen.storyboard" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker/App.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker/App.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker/IMessage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker/IPhotoPickerService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker/ISendImage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker/ImagePicker.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker/MainPage.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker/MainPage.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker/ResponseImage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker/ResultZoom.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker/ResultZoom.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker/ResultsPage.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ImagePicker/ResultsPage.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -113,7 +187,8 @@
       <workItem from="1605109052894" duration="3896000" />
       <workItem from="1605169169184" duration="597000" />
       <workItem from="1605263838272" duration="3383000" />
-      <workItem from="1605276099821" duration="2341000" />
+      <workItem from="1605276099821" duration="4098000" />
+      <workItem from="1606645432963" duration="33000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Ajout du relevance feedback pour l'api #5">
       <created>1605109394671</created>
@@ -136,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605278148537</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat(api): Ajout d'image pour indexation #4">
+      <created>1605279807805</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1605279807805</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,22 +254,22 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1059" y="454" key="FileChooserDialogImpl/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1604832006764" />
-    <state width="1233" height="415" key="GridCell.Tab.0.bottom" timestamp="1605276513495">
+    <state width="2516" height="415" key="GridCell.Tab.0.bottom" timestamp="1605282915809">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1233" height="415" key="GridCell.Tab.0.bottom/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605276513495" />
-    <state width="1233" height="415" key="GridCell.Tab.0.center" timestamp="1605276513495">
+    <state width="2516" height="415" key="GridCell.Tab.0.bottom/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605282915809" />
+    <state width="2516" height="415" key="GridCell.Tab.0.center" timestamp="1605282915809">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1233" height="415" key="GridCell.Tab.0.center/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605276513495" />
-    <state width="1233" height="415" key="GridCell.Tab.0.left" timestamp="1605276513495">
+    <state width="2516" height="415" key="GridCell.Tab.0.center/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605282915809" />
+    <state width="2516" height="415" key="GridCell.Tab.0.left" timestamp="1605282915809">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1233" height="415" key="GridCell.Tab.0.left/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605276513495" />
-    <state width="1233" height="415" key="GridCell.Tab.0.right" timestamp="1605276513495">
+    <state width="2516" height="415" key="GridCell.Tab.0.left/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605282915809" />
+    <state width="2516" height="415" key="GridCell.Tab.0.right" timestamp="1605282915809">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1233" height="415" key="GridCell.Tab.0.right/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605276513495" />
+    <state width="2516" height="415" key="GridCell.Tab.0.right/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605282915809" />
     <state width="616" height="481" key="GridCell.Tab.1.bottom" timestamp="1605266824387">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -216,10 +298,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="273" y="334" width="998" height="717" key="SettingsEditor/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1604834476197" />
-    <state x="872" y="428" key="Vcs.Push.Dialog.v2" timestamp="1605278150302">
+    <state x="872" y="428" key="Vcs.Push.Dialog.v2" timestamp="1605279809136">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="428" key="Vcs.Push.Dialog.v2/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605278150302" />
+    <state x="872" y="428" key="Vcs.Push.Dialog.v2/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605279809136" />
     <state x="348" y="279" width="583" height="849" key="find.popup" timestamp="1605276528530">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

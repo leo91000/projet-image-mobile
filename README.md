@@ -1,4 +1,4 @@
-# Projet Image Mobile - Marouane Mokaddem & Léo Coletta
+# Projet Image Mobile - Léo Coletta
 
 Le projet consiste à développer une application de recherche à partir d’image depuis un smartphone. Il s’agit d’un type d’application déjà très utilisé dans le monde du mobile. L’objectif de ce projet et de mettre en application toutes les connaissances apprises en cours lors des enseignements à distance .
 -   Service REST
@@ -11,11 +11,7 @@ La réalisation de cette application comporte deux partie bien distinct. D’une
 
 Les technologies utilisées sont les suivantes :
 -   Pour la partie serveur : Python + Django + OpenCV + Keras
--   Pour la partie client : Xamarin
-
-Nous avons décidé lors du projet de nous répartir les tâche, de manière à pouvoir avancer plus vite sur le projet. Ainsi, Marouane Mokaddem s’est occupé de toute la partie cliente et du développement mobile de l’application. De son côté, Léo Coletta s’est occupé de toute la partie serveur et du développement de l’API REST.
-
-  
+-   Pour la partie client : Quasar Framework  
 
 Nous allons décomposer notre rapport en deux parties. Tout d’abord, nous allons étudier la partie serveur et l’API REST, puis, dans un second temps nous allons comprendre le fonctionnement de la partie cliente et de l’application Android.
 
@@ -72,51 +68,29 @@ Grâce au réseau neuronal, nous recevons une liste de mot et leur score. Notre 
 
 A partir de cela, lorsqu’une recherche est effectuée, nous transformons l’image recherché en vecteur et nous effectuons la distance de manhattan par rapport à toutes les autres images. Nous gardons dans les résultats seulement les 5 plus gros ayant un score supérieur à 0.
 
+De plus, un point d'API est prévu pour ajouter des images à la base de donnée.
+
+### Relevance feedback
+
+Un appel d'api permet client peut noter les résultats de la recherche. Ces résultats pourront être utilisés plus tard pour améliorer la qualité de la recherche.
+
 # Partie Client : application native iOS/Android
 
-L’application mobile, qui permet à l’utilisateur de communiquer avec la partie serveur, a été réalisée en **C#** avec le framework **Xamarin**, qui fait partie du framework .NET, et qui permet de créer des applications 100% natives et multiplateformes (iOS, Android, Windows 10, Xbox, etc) en se basant essentiellement sur une partie commune du code, et sur peu de code propre à chaque plateforme. Nous allons montrer comment nous avons réalisé une application **Android** et **iOS**, et comment nous l’avons testée sur iOS Simulator.
+L’application mobile, qui permet à l’utilisateur de communiquer avec la partie serveur, a été réalisée en **Vue (Javascript)** avec le framework **Quasar Framework**, et permet de créer des applications 100% natives et multiplateformes (iOS, Android, Windows 10, etc) en se basant essentiellement sur une partie commune du code, et sur peu de code propre à chaque plateforme. Nous allons montrer comment nous avons réalisé une application **Android** et **iOS**, et comment nous l’avons testée sur Android Studio.
 
 ## Architecture de l'application
 
-Les applications .NET se basent sur le principe du CodeBehind, c’est-à-dire une partie graphique et une partie code, les 2 étant liées par défaut (à chaque fichier .xaml est associé un fichier .cs). L’interface commune a été réalisée en XAML, un langage Microsoft basé sur XML et qui permet de déclarer tous les éléments visuels et leur associations aux données de la partie code.
-
+Les applications Vue se basent sur le principe des composants, c’est-à-dire une partie graphique et une partie code, les 2 étant liées par défaut (dans un fichier .vue, une partie html, une partie css et une partie script). L’interface commune a été réalisée en HTML, avec des composants fournis par défault.
   
 
-![](https://lh3.googleusercontent.com/-U7WHnj66sGE3lqd1N9juzqQI2IhyN1FBDMepPMC36feB_JnqcqW5Lwg7qdamRg0NQgVqGy6s4A19XHO2o6uZGHDMCVWTitdazFD8h0V7AplCqZTMhRPjQOggRQQ1qmWzaiaEknt)
+![](https://i.imgur.com/Rszyj2v.png)
 
-Un exemple de déclaration d’éléments visuels (label, images) dans MainPage.xaml
+Un exemple de la structure d'un fichier .vue d’éléments visuels (label, images) dans ImageSearchView.vue  
 
-![](https://lh6.googleusercontent.com/JH125xan7h1L74bIR4aI7Gh_GKxiWhmuBZSloI9faOcMR0kGpYB-dWi1oNTZ1jB3LUKViTNHRbYzEnU2xaMKMGWXZGrQzetffTe9dwCP0aLeqkhRlOWrC9-24sxfP3nwio0pJVWw)
+![](https://i.imgur.com/lddpToc.png)
 
-Un exemple de référencement d’un de ces éléments dans MainPage.xaml.cs par la propriété x:Name spécifiée dans le XAML.
 
-Ces éléments sont essentiellement des labels de texte, un afficheur photos, des boutons et des menus qui permettent de sélectionner différentes options. Les éléments visuels seront automatiquement “traduits” en éléments natifs iOS et Android. L’application contient un total de 3 pages : une page principale avec 3 onglets (accueil, résultats et paramètres), une page résultat avec l’affichage d’une requête et une page zoom qui permet de visualiser la version agrandie d’une photo.
-
-  
-
-Coté C#, le premier aspect dont on s’est occupé était celui de récupérer une image depuis la galerie et de l’afficher ; pour cela, Android et iOS possèdent 2 méthodes différentes, ce qui rend presque impossible écrire du code unique pouvant être exécuté sur les 2 plateformes.
-
-  
-
-![](https://lh4.googleusercontent.com/QvaVQyB6hmWb-A-mHS9Q708nRI4M-AfOrSeDEq0lrnM9mtgb4L7vIActMS7G4XI5dGwdtUc_yixgYSQPjuhBOo6lGl1Z_ZiMGvu18ibhC7hJLq9lnfE6PNUBnbotXlPfAhXVzx3q)
-
-On peut remarquer la présence de classes UIWindow et UIApplication, propres au UIKit d'iOS, traduites en C# depuis Swift.
-
-![](https://lh6.googleusercontent.com/3aoarKUymPgNAprW0zlbHFis0yNxyAxk26mIFLfrFV0KUdt4nyJ6h1bZoDTAIcGN_-yiR85Jc5i1mj8KAWwmUOjIIkBLKwtsOD-jJI9FVOPCGcE7_UhYdIwxsYt76gd6P2EqYtvv)
-
-Alors qu'Android fait utilisation des Intents, propres à la plateforme.
-
-![](https://lh5.googleusercontent.com/cvHFOL4yOtHaHLSZEegpkXcX_WjcKqsHJIKnY5_orLRsEMEAsRDJdjoNNsr7xvPew7rngB4a3bBPcixMBegIviY7JY6p1fBTu2-61bHsgoMLcg7YjB_UtjtscSkWL4GZ1LTbgfq1)
-
-Mais finalement les 2 plateformes finissent par “se mettre d’accord” sur quel objet retourner une fois l’image sélectionnée : un Stream.
-
-  
-
-Ce Stream est récupéré pour l’envoyer directement au serveur une fois que l’utilisateur confirme l’envoi. Pour cela, nous avons fait l’utilisation de l’API Refit, une adaptation en C# de l’API Retrofit en Java. Cela nous permet de faciliter énormément les tâches, notamment au niveau du format du fichier à envoyer au serveur (le StreamPart, qui n’est pas géré nativement par les ressources REST en C#).
-
-  
-
-![](https://lh6.googleusercontent.com/LYIavfcyCcsSG-FkKQbbcq8nQn8LZ3lmYouZWrzadkAkFLj85GAcICUE6xfSgNwPHJ9f3Erue4UdADRfzJ-fUjfNr44B0wOfJX4Y4Ck_NofeTPQqOCbdOusBY-cKjJxteRH6ctZ8)
+![](https://i.imgur.com/Rszyj2v.png)
 
 L’envoi du fichier en StreamPart qui s’effectue de manière assez simple et modulaire.
 
@@ -129,15 +103,6 @@ Le response récupéré à partir de la requête permet d’obtenir un ID : cet 
 ![](https://lh4.googleusercontent.com/c0Xr4SoOXUeGzZjlq1sAXJJIj2sj0bcl_WTlVodNj52yG-f7uvYgYa_55WbqJuVLK3hpeQ09MNkWtIUe8rbtT6mZ5eJOTX2nUR45SXl-KlncZHsI05oK-diPR9TkN07N1LrlLsEu)
 
 Avec un foreach, chaque résultat de requête est mis dans une classe Result qui inclut les champs adaptés, ce qui facilite sa gestion et son affichage dans un tableau.
-
-## Expérience utilisateur
-L’utilisateur aura une page d’accueil assez simple grâce à laquelle il pourra uploader une nouvelle photo (un menu pop-up s’affiche pour qu’il puisse sélectionner la Galerie ou la caméra) ou accéder à la liste des recherches qu’il a effectué.
-
-![](https://lh3.googleusercontent.com/FaPx6pyK3YUOtq7kECwRSkw129vw18D_MrnAey-2iqtBWgwIce-JmbxSpyRghniaORYOG0RUUy0Eu0oB74evkoW4FU80MQTTe5sHle2ddpFYa57BppvHLFadORhFFhGyfZB99fhN)![](https://lh3.googleusercontent.com/Mzn9GUF1ADjnBFyOEVi6DFvqAPMt1VxqOOY2qlZoAajFD8DAwgx0XM5Vv3ICNv-ky2yYq6Lbw44LaLdxCDfUK8ngHmvjKjpujS1tZCGytoWCIiqzH_yOKRZp-vAwkyVbUXdyko8J)![](https://lh4.googleusercontent.com/aZhMo8MoYPMtVZXLR3cHjNubfyS8qzk-Bdterfz-rjymD4QxpGl_FD-PtYRW99k7xyv_Ghpey1Z9zIfx_nhYegaCS73OiDQ-vzsb8P6NakBgtzwRu3NBZ694qxou6PTwu-D9fKrw)
-
-Une fois l’image sélectionnée, l’utilisateur pourra confirmer l’envoi de l’image sur le serveur, ou de revenir en arrière pour sélectionner une autre image. Quand l’image est envoyée sur le serveur, et que la réponse est reçue, la page de résultats s’affiche avec la photo envoyée ainsi que les 5 vêtements plus similaire avec leur pourcentage de similarité. Il est aussi possible de zoomer sur chaque image et d’accéder à la liste des dernières recherches.
-
-![](https://lh6.googleusercontent.com/_vhQep6eqHLKXkC3pBLuYfPW4XDvGxcpQxQQLQFmGaTooSUO94XCm7eyRyAM89YxoBR9RK0p90loGx7d7qgPPyw3IO0prTWL6GYnMUft7Sv-ED5vn3LJ5BGVXecMgCLSpDP_vqq6)![](https://lh4.googleusercontent.com/jULfvxqL55dh3TXFISIGd3lSiIjhkIG8WusQhMxiGkIdxQuENmLXz7c8nxULOe7Kqf5Dt6U31nIhSzMtkHJHKZVjnAuMCuCrLJd8baD1hQXi9FDO5EdCNmOO3SPWEjcUsskRrAPX)![](https://lh5.googleusercontent.com/9wvj6Tqzy0MQBd76q9eeOOHF2xm0dsZqy_WzHtvI1-IeLbOD8Q36NyOGStluW3YaesnJQywWwJruyS15AkgUxZkWTMusAsVcoGdnVGOj7-N0Rdq5pZPL9mtMCcJsJu46PyTr82hd)
 
 # Bilan et conclusion
 
