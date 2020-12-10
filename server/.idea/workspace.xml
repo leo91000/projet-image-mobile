@@ -20,78 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bfc44f2a-7568-43f0-9efd-e8a5a681b864" name="Default Changelist" comment="feat(api): Ajout d'image pour indexation #4">
-      <change beforePath="$PROJECT_DIR$/../application/src/pages/AddImageToDatabase.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../application/src/pages/Home.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../application/src/pages/SimilarImageSearch.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Assets/AboutAssets.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/ImagePicker.Android.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/MainActivity.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/PhotoPickerService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Properties/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Properties/AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/AboutResources.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/Resource.designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/layout/Tabbar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/layout/Toolbar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/mipmap-anydpi-v26/icon.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/mipmap-anydpi-v26/icon_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/mipmap-hdpi/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/mipmap-hdpi/launcher_foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/mipmap-mdpi/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/mipmap-mdpi/launcher_foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/mipmap-xhdpi/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/mipmap-xhdpi/launcher_foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/mipmap-xxhdpi/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/mipmap-xxhdpi/launcher_foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/mipmap-xxxhdpi/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/mipmap-xxxhdpi/launcher_foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.Android/Resources/values/styles.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/AppDelegate.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Assets.xcassets/AppIcon.appiconset/Icon1024.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Assets.xcassets/AppIcon.appiconset/Icon120.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Assets.xcassets/AppIcon.appiconset/Icon152.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Assets.xcassets/AppIcon.appiconset/Icon167.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Assets.xcassets/AppIcon.appiconset/Icon180.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Assets.xcassets/AppIcon.appiconset/Icon20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Assets.xcassets/AppIcon.appiconset/Icon29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Assets.xcassets/AppIcon.appiconset/Icon40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Assets.xcassets/AppIcon.appiconset/Icon58.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Assets.xcassets/AppIcon.appiconset/Icon60.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Assets.xcassets/AppIcon.appiconset/Icon76.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Assets.xcassets/AppIcon.appiconset/Icon80.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Assets.xcassets/AppIcon.appiconset/Icon87.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Entitlements.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/ImagePicker.iOS.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/ImageViewController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Main.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/MessageIOS.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/PhotoPickerService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Properties/AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Resources/Default-568h@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Resources/Default-Portrait.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Resources/Default-Portrait@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Resources/Default.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Resources/Default@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.iOS/Resources/LaunchScreen.storyboard" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker/App.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker/App.xaml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker/AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker/IMessage.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker/IPhotoPickerService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker/ISendImage.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker/ImagePicker.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker/MainPage.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker/MainPage.xaml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker/ResponseImage.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker/ResultZoom.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker/ResultZoom.xaml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker/ResultsPage.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/ImagePicker/ResultsPage.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/store/images/getters.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/store/images/getters.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,10 +44,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="settings.editor.splitter.proportion" value="0.20897044" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -189,6 +122,8 @@
       <workItem from="1605263838272" duration="3383000" />
       <workItem from="1605276099821" duration="4098000" />
       <workItem from="1606645432963" duration="33000" />
+      <workItem from="1607606370128" duration="6000" />
+      <workItem from="1607606396485" duration="804000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Ajout du relevance feedback pour l'api #5">
       <created>1605109394671</created>
@@ -294,10 +229,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="990" y="318" key="RollbackChangesDialog/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1604831251219" />
-    <state x="273" y="334" width="998" height="717" key="SettingsEditor" timestamp="1604834476197">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="2833" y="334" width="998" height="717" key="SettingsEditor" timestamp="1607606604554">
+      <screen x="2560" y="0" width="2560" height="1400" />
     </state>
     <state x="273" y="334" width="998" height="717" key="SettingsEditor/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1604834476197" />
+    <state x="2833" y="334" key="SettingsEditor/0.0.2560.1400/2560.0.2560.1400@2560.0.2560.1400" timestamp="1607606604554" />
     <state x="872" y="428" key="Vcs.Push.Dialog.v2" timestamp="1605279809136">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -310,16 +246,5 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/-2560.0.2560.1400/0.0.2560.1400@0.0.2560.1400" timestamp="1605277060916" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/api/views.py</url>
-          <line>134</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

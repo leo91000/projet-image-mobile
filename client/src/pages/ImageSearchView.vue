@@ -33,6 +33,7 @@
           </div>
         </div>
       </div>
+      <!-- PARTIE 2 : Notation (vue) -->
       <div class="w-100 flex flex-center">
         <q-rating
           v-model="feedbackModel"
@@ -63,6 +64,7 @@ export default {
     imageId () {
       return this.$route.params.id
     },
+    // PARTIE 2 : On récupère la note
     feedbackModel: {
       get () {
         return this.searchResult.feedback ? this.searchResult.feedback : 0
@@ -81,6 +83,7 @@ export default {
     }
   },
   methods: {
+    <!-- PARTIE 2 -->
     ...mapActions('images', ['getSearchResults', 'setFeedback']),
     fetchResults () {
       this.getSearchResults(this.imageId)

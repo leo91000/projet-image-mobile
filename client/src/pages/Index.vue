@@ -9,7 +9,7 @@
       <q-card v-for="(image, i) in imageList" :key="image.id" class="image-button flex flex-center w-100 image-height" @click.stop="redirectToImageSearch(image.id)">
         <q-img :src="`${apiEndpoint}${image.url}`" basic :alt="`image${i}`" height="200" class="image-height">
           <div class="absolute-bottom text-subtitle1 text-center">
-            {{ `Image ${i + 1}` }}
+            {{ `Image ${imageList.length - i}` }}
           </div>
         </q-img>
       </q-card>
@@ -29,7 +29,7 @@ export default {
   },
   computed: {
     ...mapGetters('images', {
-      imageList: 'getImageList',
+      imageList: 'getReversedImageList',
       loading: 'getLoading'
     })
   },

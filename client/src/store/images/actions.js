@@ -15,6 +15,7 @@ export async function fetchImageList ({ commit }) {
 export async function imageSearch ({ dispatch, commit }, { file, index, filename }) {
   const formData = new FormData()
   formData.append('file', file, filename)
+  // PARTIE 1 : On index l'image avec un boolean
   formData.append('index', index ? '1' : '0')
 
   commit('setLoading', true)
@@ -38,6 +39,7 @@ export async function getSearchResults ({ commit }, id) {
   return {}
 }
 
+// PARTIE 2 : On envoie la note à l'API
 export async function setFeedback ({ commit, getters }, { id, value }) {
   try {
     if (getters.getImageSearchResult.id === id) {

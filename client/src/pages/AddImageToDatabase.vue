@@ -1,3 +1,4 @@
+<!-- PARTIE 1 : Vue pour indexer une image (tout ce fichier) -->
 <template>
   <q-page class="flex flex-center">
     <q-btn round color="primary" icon="add" size="lg" @click="captureImage" :loading="loading"></q-btn>
